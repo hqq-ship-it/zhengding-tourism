@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正定文旅 - 千年古城 剧本杀体验</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" />
+    
+    <style>
+        /* 补充 index 页面特有的微调样式 */
+        .text-center {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .experience-tip {
+            color: #665c48;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .btn-sub-text {
+            margin-top: 8px;
+            color: #8b4513;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body class="welcome-body">
+
+    <div class="welcome-screen" id="welcome-screen">
+        <img src="fLwQj03lR.jpg" class="welcome-img-fixed" alt="背景图">
+        <div class="welcome-vignette"></div>
+        
+        <div class="welcome-center-content">
+            <h2 class="art-subtitle">北方三雄镇 · 历史名城</h2>
+            <h1 class="art-title-bold">正定</h1>
+            <div class="art-line"></div>
+            <p class="art-desc">穿越千年的时空对话</p>
+            
+            <button class="art-button" onclick="enterSite()">
+                开启之旅
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>正定 · 千年古城的时空对话</h1>
+            <p>从东垣到正定，解锁两千年定名之谜</p>
+        </header>
+
+        <section class="card">
+            <h2 class="card-title">
+                <i class="fa-solid fa-landmark"></i> 正定历史概览
+            </h2>
+            <div class="history-content">
+                <p>正定，古称常山、真定，与北京、保定并称"北方三雄镇"，是国家历史文化名城。春秋为鲜虞国都城，战国属中山国，秦设东垣县，汉高帝十一年改东垣为真定，取"真正安定"之意。</p>
+                <p>魏晋至隋唐，正定是河北政治、经济、文化中心，宋金改称正定府，元明清为真定路/府治所。素有"九楼四塔八大寺"之称，隆兴寺、开元寺等古迹见证千年变迁。</p>
+                <p>如今，正定将历史与沉浸式体验结合，推出专属文旅剧本杀，让你穿越时空，感受古城风华。</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="card-title">
+                <i class="fa-solid fa-mask"></i> 剧本杀体验选择
+            </h2>
+            <p class="text-center experience-tip">选择你的体验方式，开启正定时空之旅</p>
+            
+            <div class="function-section">
+                <div class="text-center">
+                    <button class="btn btn-primary" id="start-test">
+                        <i class="fa-solid fa-pen-to-square"></i> 做测试题（定制剧本杀）
+                    </button>
+                    <p class="btn-sub-text">3道题定制专属路线</p>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-outline" id="skip-test">
+                        <i class="fa-solid fa-play"></i> 不做测试题（直接选剧本杀）
+                    </button>
+                    <p class="btn-sub-text">快速选择现成任务</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="card-title">
+                <i class="fa-solid fa-compass"></i> 更多功能
+            </h2>
+            <div class="secondary-functions">
+                <a href="goods.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-store"></i> 正定文创商城
+                </a>
+                <a href="map.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-map-location-dot"></i> 场地地图&实时人数
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <a href="index.html" class="btn btn-secondary back-home" style="display: none;">
+        <i class="fa-solid fa-house"></i>
+    </a>
+
+    <script src="script.js"></script>
+
+    <script>
+        function enterSite() {
+            const screen = document.getElementById('welcome-screen');
+            // 触发淡出和放大动画
+            screen.style.opacity = '0';
+            screen.style.transform = 'scale(1.1)';
+            
+            // 等待动画结束（800ms，和 CSS 里的 transition 时长一致）
+            setTimeout(() => {
+                // 彻底隐藏欢迎屏，不阻挡下层点击
+                screen.style.display = 'none';
+                // 移除 body 的溢出隐藏，使首页可以正常上下滑动
+                document.body.classList.remove('welcome-body');
+            }, 800);
+        }
+    </script>
+</body>
+</html>
